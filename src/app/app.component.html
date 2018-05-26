@@ -11,4 +11,4 @@
 
 <input type="text" [style.width.px]="510" [(ngModel)]="tweet.body"/>
 <br>
-{{tweet.body | customTitleCase}}
+{{tweet.body | customTitleCase| summary:'1':'60'}}

@@ -7,13 +7,15 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { CustomTitleCasePipe } from './custom-title-case.pipe';
 import { FormsModule } from '@angular/forms';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LikeComponent,
     AuthorsComponent,
-    CustomTitleCasePipe
+    CustomTitleCasePipe,
+    SummaryPipe
   ],
   imports: [
     FormsModule,
