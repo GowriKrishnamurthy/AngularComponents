@@ -9,6 +9,7 @@ import { CustomTitleCasePipe } from './custom-title-case.pipe';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PanelComponent } from './panel/panel.component';
     AuthorsComponent,
     CustomTitleCasePipe,
     SummaryPipe,
-    PanelComponent
+    PanelComponent,
+    InputFormatDirective
   ],
   imports: [
     FormsModule,

@@ -12,7 +12,7 @@
 <input type="text" [style.width.px]="510" [(ngModel)]="tweet.body"/>
 <br>
 {{tweet.body | customTitleCase| summary:'1':'60'}}
--->
+
 <app-panel>
     <ng-container class="heading">Heading</ng-container>
     <ng-container class="body">
@@ -20,3 +20,5 @@
         <p>Some content here..</p>
     </ng-container>
 </app-panel>
+-->
+<input type="text" [InputFormat]="'uppercase'" />
