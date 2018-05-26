@@ -1,0 +1,9 @@
+<span 
+class="fab fa-stack-overflow"
+[ngClass]="{
+    'far fa-thumbs-up':isLiked,
+    'fas fa-thumbs-down':!isLiked
+}"
+(click)="onClick()"
+></span> 
+<span>{{likesCount}}</span>
