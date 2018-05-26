@@ -8,6 +8,7 @@ import { AuthorsService } from './authors.service';
 import { CustomTitleCasePipe } from './custom-title-case.pipe';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SummaryPipe } from './summary.pipe';
     LikeComponent,
     AuthorsComponent,
     CustomTitleCasePipe,
-    SummaryPipe
+    SummaryPipe,
+    PanelComponent
   ],
   imports: [
     FormsModule,
