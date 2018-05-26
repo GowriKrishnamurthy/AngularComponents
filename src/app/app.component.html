@@ -1,7 +1,14 @@
-<!-- {{tweet.body}}
+<!--
+
+{{tweet.body}}
 <like [isLiked]="tweet.isLiked"
 [likesCount]="tweet.likesCount"
 (liked)="onTweetLike()"
 ></like>
--->
+
 <authors></authors>
+-->
+
+<input type="text" [style.width.px]="510" [(ngModel)]="tweet.body"/>
+<br>
+{{tweet.body | customTitleCase}}

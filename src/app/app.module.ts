@@ -5,14 +5,18 @@ import { AppComponent } from './app.component';
 import { LikeComponent } from './like/like.component';
 import { AuthorsComponent } from './authors/authors.component'; 
 import { AuthorsService } from './authors.service';
+import { CustomTitleCasePipe } from './custom-title-case.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LikeComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    CustomTitleCasePipe
   ],
   imports: [
+    FormsModule,
     BrowserModule
   ],
   providers: [AuthorsService ],
