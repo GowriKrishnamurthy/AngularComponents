@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InputFormatDirective } from './input-format.directive';
     CustomTitleCasePipe,
     SummaryPipe,
     PanelComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ZippyComponent
   ],
   imports: [
     FormsModule,

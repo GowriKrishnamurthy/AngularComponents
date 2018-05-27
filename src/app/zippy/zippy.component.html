@@ -1,0 +1,12 @@
+<!--Heading for title and Body for the content to be injected by users-->
+<div class="zippy">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="toggle()"> {{title}}
+      <span class="fas"
+        [ngClass]="{
+            'fa-chevron-down':isExpanded,
+            'fa-chevron-up':!isExpanded
+        }"> 
+    </span>
+      </div>
+  <div class="zippy-body" *ngIf="isExpanded"> <ng-content></ng-content>    </div>
+</div>
