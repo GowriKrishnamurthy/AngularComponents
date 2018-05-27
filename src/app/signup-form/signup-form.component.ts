@@ -30,7 +30,23 @@ export class SignupFormComponent {
   {
     return this.signupForm.get('password');
   }
-  onSignup(){
-    console.log("Signup done");
+  
+  login(){
+  this.signupForm.setErrors({
+    //Dummy code to test the form error handler
+    invalidLogin:true
+    });
   }
+  /*
+  login(){
+  // Code to call the server if the user name and password is valid or not 
+  // Authentication service  
+  let isValid= authService.login(this.signupForm.value);
+    // If invalid, set validation error at the form level 
+    if(!isValid)
+      this.signupForm.setErrors({
+        invalidLogin:true
+      })
+  }
+*/
 }
