@@ -12,6 +12,7 @@ import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     PanelComponent,
     InputFormatDirective,
     ZippyComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     FormsModule,
