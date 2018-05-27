@@ -8,4 +8,17 @@ export class SignUpFormValidator{
     
          return null;
     }
+    static uniqueUserName(control:AbstractControl): Promise<ValidationErrors | null>{
+
+        return new Promise((resolve,reject)=>{
+        // Async operation
+        setTimeout(()=>{
+            // Assume if the name in server is Smith 
+            if(control.value === 'Smith')
+                resolve ({uniqueUserName: true});
+            else                
+                resolve(null);
+        },2000);
+        });
+    }
 }
