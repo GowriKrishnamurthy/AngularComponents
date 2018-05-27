@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormControl, Validators } from '@angular/forms';
+import {FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SignUpFormValidator } from './signup-form.validator';
 @Component({
   selector: 'signup-form',
@@ -17,10 +17,14 @@ export class SignupFormComponent {
       SignUpFormValidator.cannotContainSpace
     ],SignUpFormValidator.uniqueUserName
     ),
-    'password':new FormControl('',Validators.required 
-    )
-  });
-  
+    //Sub group for password and confirm password
+    'passwords':new FormGroup({
+      'password':new FormControl('',Validators.required),
+      'confirmPassword':new FormControl('',[Validators.required]) 
+      }, 
+      )
+    });
+
   get username()
   {
     return this.signupForm.get('username');
@@ -28,15 +32,20 @@ export class SignupFormComponent {
 
   get password()
   {
-    return this.signupForm.get('password');
+    return this.signupForm.get('passwords.password');
   }
-  
+  get confirmPassword()
+  {
+    return this.signupForm.get('passwords.confirmPassword');
+  }
+
   login(){
   this.signupForm.setErrors({
     //Dummy code to test the form error handler
     invalidLogin:true
     });
   }
+}
   /*
   login(){
   // Code to call the server if the user name and password is valid or not 
@@ -49,4 +58,3 @@ export class SignupFormComponent {
       })
   }
 */
-}

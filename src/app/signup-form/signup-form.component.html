@@ -9,10 +9,8 @@
             id="username" 
             type="text" 
             class="form-control">
-      
             <!--Checking for uniquness-->
             <div *ngIf="username.pending"> Checking for uniqueness..</div>
-        
             <!--Multiple divs for multiple error conditions -->
             <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
                 <div *ngIf="username.errors.required"> User name is required </div>
@@ -21,14 +19,25 @@
                 <div *ngIf="username.errors.uniqueUserName"> User name is not unique </div>
             </div>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input 
-            formControlName="password"
-            id="password" 
-            type="text" 
-            class="form-control">
-            <div class="alert alert-danger" *ngIf="password.touched && password.invalid"> Password required</div>
-    </div>
+        <div formGroupName="passwords">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    formControlName="password"
+                    id="password" 
+                    type="text" 
+                    class="form-control">
+                    <div class="alert alert-danger" *ngIf="password.touched && password.invalid"> Password required</div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    formControlName="confirmPassword"
+                    id="confirmPassword" 
+                    type="text" 
+                    class="form-control">
+                    <div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.invalid"> Confirm Password required</div>
+            </div>
+        </div>
     <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>
