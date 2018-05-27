@@ -6,11 +6,12 @@ import { LikeComponent } from './like/like.component';
 import { AuthorsComponent } from './authors/authors.component'; 
 import { AuthorsService } from './authors.service';
 import { CustomTitleCasePipe } from './custom-title-case.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,12 @@ import { ZippyComponent } from './zippy/zippy.component';
     SummaryPipe,
     PanelComponent,
     InputFormatDirective,
-    ZippyComponent
+    ZippyComponent,
+    SignupFormComponent
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule
   ],
   providers: [AuthorsService ],
