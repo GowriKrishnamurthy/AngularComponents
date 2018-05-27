@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="signupForm" >
     <div class="form-group">
         <label for="username">Username</label>
         <input 
@@ -23,5 +23,5 @@
             class="form-control">
             <div class="alert alert-danger" *ngIf="password.touched && password.invalid"> Password required</div>
     </div>
-    <button class="btn btn-primary" type="submit">Sign Up</button>
+    <button class="btn btn-primary" type="submit" (click)="onSignup()">Sign Up</button>
 </form>

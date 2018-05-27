@@ -7,7 +7,7 @@ import { SignUpFormValidator } from './signup-form.validator';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent {
-form = new FormGroup(
+  signupForm = new FormGroup(
   {
     // FormControl- param1: initial value, 2nd- validator function reference
     'username':new FormControl('',
@@ -17,19 +17,20 @@ form = new FormGroup(
       SignUpFormValidator.cannotContainSpace
     ]
     ),
-    'password':new FormControl('',[
-      Validators.required,
-      Validators.minLength(5)]
+    'password':new FormControl('',Validators.required 
     )
   });
   
   get username()
   {
-    return this.form.get('username');
+    return this.signupForm.get('username');
   }
 
   get password()
   {
-    return this.form.get('password');
+    return this.signupForm.get('password');
+  }
+  onSignup(){
+    console.log("Signup done");
   }
 }
