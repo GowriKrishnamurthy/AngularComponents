@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule, Http } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LikeComponent } from './like/like.component';
 import { AuthorsComponent } from './authors/authors.component'; 
@@ -13,7 +13,8 @@ import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
-import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component'; 
+import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
+import { PostsComponent } from './posts/posts.component'; 
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
     ZippyComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-    ChangePasswordFormComponent],
+    ChangePasswordFormComponent,
+    PostsComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [AuthorsService ],
+  providers: [AuthorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
