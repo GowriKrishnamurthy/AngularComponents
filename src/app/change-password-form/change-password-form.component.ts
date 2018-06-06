@@ -19,7 +19,7 @@ export class ChangePasswordFormComponent {
         confirmPassword:['',Validators.required]
       },{
       // Form level validation
-      validator:passwordValidators.passwordDoNotMatch;
+      validator:passwordValidators.passwordDoNotMatch
     }
   );   
   }
