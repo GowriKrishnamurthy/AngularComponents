@@ -1,49 +1,35 @@
 <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-        <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+        <div  formGroupName="userData">
           <div class="form-group">
             <label for="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              formControlName="username"
-              class="form-control">
-              <span class="help-block" 
-              *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched">
+            <input type="text" id="username" class="form-control" formControlName="username">
+            <span class="help-block" *ngIf="!username.valid && username.touched">
               Please enter a valid user name
-              </span>
+            </span>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              class="form-control"
-              formControlName="email">
-              <span class="help-block" 
-              *ngIf="!myReactiveForm.get('email').valid && myReactiveForm.get('email').touched">
+            <input type="text" id="email" class="form-control" formControlName="email">
+            <span class="help-block" *ngIf="!email.valid && email.touched">
               Please enter a valid email
-              </span>
-
-            </div>
-          <div class="radio" *ngFor="let gender of genders">
-            <label>
-              <input
-                type="radio"
-                formControlName="gender"
-                [value]="gender"
-                >{{ gender }}
-            </label>
+            </span>
           </div>
-          <button [disabled]="!myReactiveForm.valid" class="btn btn-primary" type="submit">Submit</button>
-          <span class="help-block" 
-          *ngIf="!myReactiveForm.valid && myReactiveForm.touched">
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" formControlName="gender" [value]="gender">{{ gender }}
+          </label>
+        </div>
+        <button [disabled]="!myReactiveForm.valid" class="btn btn-primary" type="submit">Submit</button>
+        <span class="help-block" *ngIf="!myReactiveForm.valid && myReactiveForm.touched">
           Invalid form
-          </span>
-  </form>
-        
-      </div>
+        </span>
+      </form>
+
     </div>
   </div>
-  
+</div>
+
