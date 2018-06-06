@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-        <form [formGroup]="myReactiveForm">
+        <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -9,6 +9,10 @@
               id="username"
               formControlName="username"
               class="form-control">
+              <span class="help-block" 
+              *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched">
+              Please enter a valid user name
+              </span>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -17,7 +21,12 @@
               id="email"
               class="form-control"
               formControlName="email">
-          </div>
+              <span class="help-block" 
+              *ngIf="!myReactiveForm.get('email').valid && myReactiveForm.get('email').touched">
+              Please enter a valid email
+              </span>
+
+            </div>
           <div class="radio" *ngFor="let gender of genders">
             <label>
               <input
@@ -27,8 +36,13 @@
                 >{{ gender }}
             </label>
           </div>
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+          <button [disabled]="!myReactiveForm.valid" class="btn btn-primary" type="submit">Submit</button>
+          <span class="help-block" 
+          *ngIf="!myReactiveForm.valid && myReactiveForm.touched">
+          Invalid form
+          </span>
+  </form>
+        
       </div>
     </div>
   </div>
