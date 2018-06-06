@@ -17,6 +17,7 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
 import { PostsComponent } from './posts/posts.component'; 
 import { PostService } from './services/post.service';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
+import { FormAssignmentComponent } from './form-assignment/form-assignment.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
     NewCourseFormComponent,
     ChangePasswordFormComponent,
     PostsComponent,
-    NewUserFormComponent],
+    NewUserFormComponent,
+    FormAssignmentComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
