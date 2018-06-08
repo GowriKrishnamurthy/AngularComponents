@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServerService } from '../services/server.service';
 
 @Component({
@@ -6,21 +6,29 @@ import { ServerService } from '../services/server.service';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css']
 })
-export class ServerComponent {
-  constructor(private serverService:ServerService){
+export class ServerComponent implements OnInit {
+  servers = [];
+  constructor(private serverService: ServerService) {
   }
-  servers = [
-    {
-      name: 'Testserver',
-      capacity: 10,
-      id: this.generateId()
-    },
-    {
-      name: 'Liveserver',
-      capacity: 100,
-      id: this.generateId()
-    }
-  ];
+  ngOnInit() {
+    this.serverService.getServers()
+      .subscribe(
+        (servers: any[]) => {
+          this.servers = servers;
+        },
+        (error) => {
+          if (error.status === 400) {
+            console.log(error.json());
+          }
+          else {
+            // alert("An unexpected error occured");
+            console.log(error);
+          }
+        }
+      );
+  }
+
+
   onAddServer(name: string) {
     this.servers.push({
       name: name,
@@ -28,14 +36,16 @@ export class ServerComponent {
       id: this.generateId()
     });
   }
+
   private generateId() {
     return Math.round(Math.random() * 10000);
   }
-  onSave(){
+  onSave() {
     this.serverService.storeServer(this.servers)
-    .subscribe(
-      (response)=>console.log(response),
-      (error)=>console.log(error)
-    );
+      .subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
   }
+
 }
