@@ -7,7 +7,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
 import { CustomTitleCasePipe } from './custom-title-case.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SummaryPipe } from './summary.pipe';
+import { SummaryPipe } from './pipes/summary/summary.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
@@ -21,6 +21,7 @@ import { FormAssignmentComponent } from './form-assignment/form-assignment.compo
 import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-demo.component';
 import { ReactiveProjectFormComponent } from './reactive-project-form/reactive-project-form.component';
 import { NgClassBindingComponent } from './ng-class-sample/ng-class-sample.component';
+import { FilterPipe } from './pipes/filter/filter.pipe';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { NgClassBindingComponent } from './ng-class-sample/ng-class-sample.compo
     FormAssignmentComponent,
     ReactiveFormDemoComponent,
     ReactiveProjectFormComponent,
-    NgClassBindingComponent],
+    NgClassBindingComponent,
+    FilterPipe],
   imports: [
     FormsModule,
     ReactiveFormsModule,
