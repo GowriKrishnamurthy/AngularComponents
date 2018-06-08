@@ -16,8 +16,8 @@ import { AuthorsService } from '../authors.service';
 export class AuthorsComponent implements OnInit {
 
   authors;
-  constructor(authorsServiceObj:AuthorsService) { 
-    this.authors=authorsServiceObj.getAuthors(); 
+  constructor(authorsServiceObj: AuthorsService) {
+    this.authors = authorsServiceObj.getAuthors();
 
   }
 

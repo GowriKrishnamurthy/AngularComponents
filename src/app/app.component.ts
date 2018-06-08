@@ -8,12 +8,12 @@ import { LikeEventArgs } from './like/like.component';
 })
 export class AppComponent {
 
-  tweet={
-    body:`"Normally pipe is only invoked when the inputs to pipestransformmethod change.`,
-    isLiked:false,
-    likesCount:0
+  tweet = {
+    body: `"Normally pipe is only invoked when the inputs to pipestransformmethod change.`,
+    isLiked: false,
+    likesCount: 0
   }
-  onTweetLike(eventArgs:LikeEventArgs){
-    console.log("Tweet liked"+eventArgs.isLiked+eventArgs.likesCount); 
+  onTweetLike(eventArgs: LikeEventArgs) {
+    console.log("Tweet liked" + eventArgs.isLiked + eventArgs.likesCount);
   }
 }

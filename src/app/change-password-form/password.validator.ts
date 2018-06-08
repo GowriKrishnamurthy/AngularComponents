@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors, Validators } from "@angular/forms";
 
-export class passwordValidators{ 
+export class passwordValidators {
     //Check values from the server - Async validation.
     static invalidOldPassword(control: AbstractControl) {
         return new Promise((resolve) => {
@@ -13,11 +13,11 @@ export class passwordValidators{
     }
 
     static passwordDoNotMatch(control: AbstractControl) {
-        let newPassword=control.get('newPassword');
-        let confirmPassword=control.get('confirmPassword');
+        let newPassword = control.get('newPassword');
+        let confirmPassword = control.get('confirmPassword');
 
-        if(newPassword.value!==confirmPassword.value)
-            return { passwordDoNotMatch:true  };
+        if (newPassword.value !== confirmPassword.value)
+            return { passwordDoNotMatch: true };
         else
             return null;
     }

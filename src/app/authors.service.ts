@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class AuthorsService {
 
   constructor() { }
-  
-  getAuthors(){
-    return ["Steve","John","Smith"];
+
+  getAuthors() {
+    return ["Steve", "John", "Smith"];
   }
 }

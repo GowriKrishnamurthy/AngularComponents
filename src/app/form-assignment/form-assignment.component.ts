@@ -6,11 +6,11 @@ import { Form } from '@angular/forms';
   templateUrl: './form-assignment.component.html',
   styleUrls: ['./form-assignment.component.css']
 })
-export class FormAssignmentComponent  {
+export class FormAssignmentComponent {
   @ViewChild('f') myForm: Form;
   subscriptions = ["Basic", "Advanced", "Pro"];
-  defaultSubscription='Advanced';
-  onSubmit(){
-    console.log(this.myForm.value);
+  defaultSubscription = 'Advanced';
+  onSubmit() {
+    // console.log(this.myForm.value);
   }
 }

@@ -8,32 +8,31 @@ import { CustomValidators } from './custom-validators';
   styleUrls: ['./reactive-project-form.component.css']
 })
 export class ReactiveProjectFormComponent implements OnInit {
-  projectForm : FormGroup;
+  projectForm: FormGroup;
   // projectStatus:['Stable', 'Critical', 'Finished'];
 
   ngOnInit() {
-    this.projectForm=new FormGroup({
-      'projectName':new FormControl(null,  
+    this.projectForm = new FormGroup({
+      'projectName': new FormControl(null,
         [Validators.required,
         CustomValidators.invalidProjectName.bind(this)],
         CustomValidators.asyncInvalidProjectName),
-      'email':new FormControl(null,[Validators.required,Validators.email]),
-      'projectStatus':new FormControl('Stable')
-      });
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'projectStatus': new FormControl('Stable')
+    });
   }
-  
-  get projectName(){
+
+  get projectName() {
     return this.projectForm.get('projectName');
   }
-  get email(){
+  get email() {
     return this.projectForm.get('email');
   }
-  get projectStatus(){
+  get projectStatus() {
     return this.projectForm.get('projectStatus');
   }
 
-  onSubmit()
-  {
+  onSubmit() {
     console.log(this.projectForm.value);
   }
 }

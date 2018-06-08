@@ -25,14 +25,14 @@ export class NewUserFormComponent {
     //   gender:'female'
     // });
     // Better approach
-    this.signupForm.form.patchValue({
-      userData: {
-        username: suggestedName
-      }
-    });
+    // this.signupForm.form.patchValue({
+    //   userData: {
+    //     username: suggestedName
+    //   }
+    // });
   }
 
   onSubmit() {
-    this.signupForm.reset();
+    // this.signupForm.reset();
   }
 }

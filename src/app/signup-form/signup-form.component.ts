@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SignUpFormValidator } from './signup-form.validator';
 @Component({
   selector: 'signup-form',
@@ -8,41 +8,38 @@ import { SignUpFormValidator } from './signup-form.validator';
 })
 export class SignupFormComponent {
   signupForm = new FormGroup(
-  {
-    // FormControl- param1: initial value, 2nd- validator function reference
-    'username':new FormControl('',
-    [
-      Validators.required,
-      Validators.minLength(5),
-      SignUpFormValidator.cannotContainSpace
-    ],SignUpFormValidator.uniqueUserName
-    ),
-    //Sub group for password and confirm password
-    'passwords':new FormGroup({
-      'password':new FormControl('',Validators.required),
-      'confirmPassword':new FormControl('',[Validators.required]) 
-      }, 
+    {
+      // FormControl- param1: initial value, 2nd- validator function reference
+      'username': new FormControl('',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          SignUpFormValidator.cannotContainSpace
+        ], SignUpFormValidator.uniqueUserName
+      ),
+      //Sub group for password and confirm password
+      'passwords': new FormGroup({
+        'password': new FormControl('', Validators.required),
+        'confirmPassword': new FormControl('', [Validators.required])
+      },
       )
     });
 
-  get username()
-  {
+  get username() {
     return this.signupForm.get('username');
   }
 
-  get password()
-  {
+  get password() {
     return this.signupForm.get('passwords.password');
   }
-  get confirmPassword()
-  {
+  get confirmPassword() {
     return this.signupForm.get('passwords.confirmPassword');
   }
 
-  login(){
-  this.signupForm.setErrors({
-    //Dummy code to test the form error handler
-    invalidLogin:true
+  login() {
+    this.signupForm.setErrors({
+      //Dummy code to test the form error handler
+      invalidLogin: true
     });
   }
 }

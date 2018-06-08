@@ -9,18 +9,18 @@ import { FormGroup, FormControl, FormArray } from '@angular/forms';
 export class NewCourseFormComponent {
   // topics is set to an empty FormArray
   form = new FormGroup({
-   topics: new  FormArray([])
+    topics: new FormArray([])
   });
 
-  addTopic(topic:HTMLInputElement){
+  addTopic(topic: HTMLInputElement) {
     this.topics.push(new FormControl(topic.value));
-    topic.value="";
+    topic.value = "";
   }
-  get topics(){
+  get topics() {
     return this.form.get('topics') as FormArray;
   }
-  removeTopic(topic:FormControl){
-    let index= this.topics.controls.indexOf(topic);
+  removeTopic(topic: FormControl) {
+    let index = this.topics.controls.indexOf(topic);
     this.topics.removeAt(index);
   }
 }
