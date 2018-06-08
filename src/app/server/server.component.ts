@@ -8,9 +8,11 @@ import { ServerService } from '../services/server.service';
 })
 export class ServerComponent implements OnInit {
   servers = [];
+  appName:any;
   constructor(private serverService: ServerService) {
   }
   ngOnInit() {
+    this.appName=this.serverService.getAppName();
     this.serverService.getServers()
       .subscribe(
         (servers: any[]) => {

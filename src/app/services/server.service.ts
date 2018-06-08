@@ -35,5 +35,13 @@ export class ServerService {
       }
     );
   }
+  getAppName(){
+    return this.http.get('https://angular-http-d0174.firebaseio.com/appName.json')
+      .map(
+        (response:Response)=>{
+          return response.json();
+        }
+      )
+  }
 
 }
