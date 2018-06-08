@@ -22,6 +22,9 @@ import { ReactiveFormDemoComponent } from './reactive-form-demo/reactive-form-de
 import { ReactiveProjectFormComponent } from './reactive-project-form/reactive-project-form.component';
 import { NgClassBindingComponent } from './ng-class-sample/ng-class-sample.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormDemoComponent,
     ReactiveProjectFormComponent,
     NgClassBindingComponent,
-    FilterPipe],
+    FilterPipe,
+    ReversePipe,
+    ShortenPipe,
+    SortPipe],
   imports: [
     FormsModule,
     ReactiveFormsModule,
