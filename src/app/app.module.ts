@@ -25,6 +25,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { ServerComponent } from './server/server.component';
+import { ServerService } from './services/server.service';
 
 
 @NgModule({
@@ -49,14 +51,15 @@ import { SortPipe } from './pipes/sort.pipe';
     FilterPipe,
     ReversePipe,
     ShortenPipe,
-    SortPipe],
+    SortPipe,
+    ServerComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     HttpModule
   ],
-  providers: [AuthorsService, PostService],
+  providers: [AuthorsService, PostService,ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
